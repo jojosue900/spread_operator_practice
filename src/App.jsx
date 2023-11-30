@@ -2,9 +2,17 @@ import React, { useState } from "react";
 
 function App() {
   const [userInput, setUserInput] = useState("");
+  const [toDoList, setToDoList] = useState([]);
 
   function handleChange(e) {
     setUserInput(e.target.value);
+    console.log(userInput);
+  }
+  function handleClick() {
+    let newItem = userInput;
+    setToDoList([...toDoList, newItem]);
+    console.log(toDoList);
+    setUserInput("");
   }
 
   return (
@@ -19,13 +27,15 @@ function App() {
           placeholder="To-Do...."
           type="text"
         />
-        <button>
+        <button onClick={handleClick}>
           <span>Add</span>
         </button>
       </div>
       <div>
         <ul>
-          <li>A Item</li>
+          {toDoList.map((to_do) => {
+            return <li key={Math.random() * 100000}>{to_do}</li>;
+          })}
         </ul>
       </div>
     </div>
