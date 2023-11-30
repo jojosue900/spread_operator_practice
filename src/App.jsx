@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div className="form">
+        <input type="text" />
+        <button>
+          <span>Add</span>
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <div>
+        <ul>
+          <li>A Item</li>
+        </ul>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
+//CHALLENGE: Make this app work by applying what you've learnt.
+//1. When new text is written into the input, its stin the input should be
+//added to an array.ate should be saved.
+//2. When the add button is pressed, the current data
+//3. The <ul> should display all the array items as <li>s
+git;
